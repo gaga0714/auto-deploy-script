@@ -21,8 +21,9 @@ NGINX_AVAIL_DIR=/etc/nginx/sites-available
 NGINX_ENABLED_DIR=/etc/nginx/sites-enabled
 
 usage() {
-  cat <<'EOF' >&2
-usage: sudo setup-site.sh <project-name> [--root <path>] [--port <port>]
+  local me="${0##*/}"
+  cat >&2 <<EOF
+usage: sudo $me <project-name> [--root <path>] [--port <port>]
 
   <project-name>   nginx config 文件名 / 项目标识(必填)
   --root <path>    静态文件根目录,默认 /home/html/<project-name>
